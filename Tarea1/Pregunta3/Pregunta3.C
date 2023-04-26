@@ -1,67 +1,59 @@
-#include <stdio.h>
 #include <stdlib.h>
 
-//Primero se 
-typedef double (*funcion)(double **, double **, int);
+//Primero se define un puntero funcion
+typedef void (*funcion)(double **, double **, int, double *, double *);
 
-double *energia(double **posiciones, double **velocidades, int n_particulas){
-    double *resultado = (double*)malloc(2 * sizeof(double*)); // reservamos memoria para dos valores de tipo double
-    double K = 0, V = 0;
-    //Definir output 
-    resultado[0] = K;
-    resultado[1] = V;
-    return resultado;
+//Se define una función "energía" que internamente hace el cálculo de las
+//energías cinética y potencial, T y V respectivamente. Solo para tener retorno se
+//asigna valor de retorno arbitrario 0.0 para cada caso.
+void funcion_energia(double **posiciones, double **velocidades, int n_particulas, double *T, double *V) {
+    *T = 0.0;
+    *V = 0.0;
 }
 
+//Se define la estructura pedida
 struct Pregunta3
 {
     int n_particulas; //Número de partículas
     double **posiciones;
     double **velocidades;
-    funcion energia;
-    double K; //Energía Cinética
+    funcion calculo_energia;
+    double T; //Energía Cinética
     double V;//Energía Potencial
 };
 
-void init(struct Pregunta3 *sistema, int n_particulas) {
+//Se reservan las memorias pedidas
+void init(struct Pregunta3 *sistema, int n_particulas, funcion energia) {
+    //Se definen los valores de n_particulas, T y V al elemento del mismo nombre dentro de la estructura
     sistema->n_particulas = n_particulas;
-
-    // Reserva de memoria para las posiciones de las partículas
-    //Reserva memoria para componentes x, y, z
-    sistema->posiciones = (double**) malloc(3 * sizeof(double*));
-    //Reserva memoria para la cantidad de partículas n_particulas
+    sistema->T = 0;
+    sistema->V = 0;
+    //Se define la función "energia" a "calculo_energia" dentro de la estructura
+    sistema->calculo_energia = energia;
+   //Se reserva memoria para los punteros posiciones y velocidades
+    sistema->posiciones = malloc(3 * sizeof(double *));
+    sistema->velocidades = malloc(3 * sizeof(double *));
+     //Reserva memoria para componentes x, y, z de las posiciones y las velocidades
     for(int i = 0; i < 3; i++) {
-        sistema->posiciones[i] = (double*) malloc(n_particulas * sizeof(double));
-    }
-
-    // Reserva de memoria para las velocidades de las partículas
-    sistema->velocidades = (double**) malloc(3 * sizeof(double*));
-    for(int i = 0; i < 3; i++) {
-        sistema->velocidades[i] = (double*) malloc(n_particulas * sizeof(double));
+        sistema->posiciones[i] = malloc(n_particulas * sizeof(double));
+        sistema->velocidades[i] = malloc(n_particulas * sizeof(double));
     }
 }
 
 // Función para realizar cálculos de energía en el sistema de partículas
-void calculos(Pregunta3 *sistema, double **posiciones, double **velocidades, int n_particulas, funcion energia) {
+void calculos(struct Pregunta3 *sistema) {
     // Llamada a la función externa que realiza los cálculos de energía
-    double *resultados = energia(posiciones, velocidades, n_particulas);
-    sistema->K = resultados[0];
-    sistema->V = resultados[1];
-    sistema->energia(sistema->posiciones, sistema->velocidades, sistema->n_particulas);
-    free(resultados);
+     sistema->calculo_energia(sistema->posiciones, sistema->velocidades, sistema->n_particulas, &(sistema->T), &(sistema->V));
 }
 
 // Función para liberar la memoria reservada por el sistema de partículas
-void liberar(Pregunta3 *sistema) {
-    // Liberación de memoria de las posiciones de las partículas
+void liberar(struct Pregunta3 *sistema) {
+    // Liberación de memoria de las posiciones y velocidades de la i-esima fila
     for(int i = 0; i < 3; i++) {
         free(sistema->posiciones[i]);
-    }
-    free(sistema->posiciones);
-
-    // Liberación de memoria de las velocidades de las partículas
-    for(int i = 0; i < 3; i++) {
         free(sistema->velocidades[i]);
     }
+    //Liberación de memoria de los punteros posiciones y velocidades
+    free(sistema->posiciones);
     free(sistema->velocidades);
 }
