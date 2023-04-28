@@ -1,0 +1,1 @@
+awk '{last = $2} END{print "El número de átomos es: "last}' 1ubq.pdb
