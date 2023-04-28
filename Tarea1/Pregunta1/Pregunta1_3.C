@@ -1,25 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 
-int maximo(int turnos[500]);
-int minimo(int turnos[500]);
-void imprimirHistograma(int *histograma, int num_cuadros, int min, int ancho_cuadros);
+float maximo(float norma_euclidiana[500]);
+float minimo(float norma_euclidiana[500]);
+void imprimirHistograma(int *histograma, float num_cuadros, float min, float ancho_cuadros);
 
-int main() {
+int main(int argc, char *argv[]) {
     // Abrir archivo
     FILE *archivo = fopen("datos.dat", "r");
 
     // Debemos definir una variabla para alojar cada linea del archivo
     char string[1024];
-
     // Definimos para separar columnas de la linea
     char *token = NULL;
-    // Adicionalmente, total lineas
+    // Adicionalmente, total lineas. Se resta la posicion final con la 
+    //posición inicial 
     int num_lineas = 509-9;
-    // Definir array para guardar informacion de los turnos
-    int turnos[509-9];
-
+    // Definir array para guardar informacion de las normas euclineanas
+    float norma_euclidiana[509-9];
     // leer primera linea
     fgets(string, 1024, archivo);
     for (int i=0; i<num_lineas; ++i) {
