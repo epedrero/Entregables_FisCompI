@@ -1,0 +1,1 @@
+awk 'NR>=10{print sqrt($3*$3+$4*$4+$5*$5)}' datos.dat > distancias.csv
