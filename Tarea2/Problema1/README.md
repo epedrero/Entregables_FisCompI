@@ -8,9 +8,9 @@
 
 Considerar que, dada la aceleración
 
-$\ddot{x}=-f(x)$
+$$\ddot{x}=-f(x)$$
 
 se puede usar la transformación
 
-$\frac{d}{dx}\left(\frac{v^2}{2}\right)=\ddot{x}$
+$$\frac{d}{dx}\left(\frac{v^2}{2}\right)=\ddot{x}$$
 
