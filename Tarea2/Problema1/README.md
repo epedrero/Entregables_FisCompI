@@ -6,7 +6,7 @@
 
 # Pregunta 3b
 ### Parte Teórico
-Considerar que, dada la aceleración
+Dada la aceleración
 
 $$\ddot{x}=-f(x)$$
 
@@ -14,7 +14,7 @@ se puede usar la propiedad
 
 $$\frac{d}{dx}\left(\frac{\dot{x}^2}{2}\right)=\ddot{x}$$
 
-Suponiendo el cambio de variable $y=\frac{\dot{x}^2}{2}$, entonces
+Considerando el cambio de variable $y=\frac{\dot{x}^2}{2}$, entonces
 
 $$\frac{d}{dx}y=-f(x)$$
 $$\Rightarrow y=y_0-\int_{x_0}^{x}f(x)dx$$
