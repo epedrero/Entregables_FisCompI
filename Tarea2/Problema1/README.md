@@ -23,5 +23,4 @@ $$\Rightarrow y=y_0-\int_{x_0}^{x}f(x)dx$$
 Por lo que se aplicará el método del Trapecio en términos de la variable nueva, $y$. Luego se realiza el cambio de variable $\dot{x}=\sqrt{2y}$ para encontrar la rapidez en $x=0$.
 
 ### Instrucciones Código
-Para de compilar, en la terminal integrado del directorio hay que escribir 
-`make`
+Para compilar, en la terminal integrada del directorio $\texttt{fiscomp1_Entregables_EPedrero/Tarea2/Problema1/3b}$ hay que escribir `make`, esto compilará el Makefile, el cual generará un archivo $\texttt{ejecutable.out}$. Para ejecutarlo, en la terminal se escribe `./ejecutable.out`, en donde se imprimirá el resultado en la misma terminal.
