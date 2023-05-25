@@ -18,7 +18,7 @@ Considerando el cambio de variable $y=\frac{\dot{x}^2}{2}$, entonces
 
 $$\frac{d}{dx}y=-f(x)$$
 
-$$\Rightarrow y=y_0-\int_{x_0}^{x}f(x)dx$$
+$$\Rightarrow y=y_0-\int_{x_0}^{x}f(x')dx'$$
 
 Por lo que se aplicará el método del Trapecio en términos de la variable nueva, $y$. Luego se realiza el cambio de variable $\dot{x}=\sqrt{2y}$ para encontrar la rapidez en $x=0$.
 
