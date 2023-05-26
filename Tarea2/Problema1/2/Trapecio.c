@@ -1,4 +1,4 @@
-#include "header2.h"
+#include "header12.h"
 
 // Implementación del método del trapecio para la integración
 double metodoTrapecio(double x0, double xn, int n, double (*func)(double, double, double, double, double), double m, double k, double b, double mu)  {

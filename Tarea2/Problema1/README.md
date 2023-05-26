@@ -5,7 +5,7 @@
 # Pregunta 3a
 
 # Pregunta 3b
-### Parte Teórico
+### Parte Teórica
 Dada la aceleración
 
 $$\ddot{x}=-f(x)$$

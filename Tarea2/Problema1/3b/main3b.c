@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "header3b.h"
-#include "header2.h"
+#include "header12.h"
 
 int main() {
     // Parámetros de la función aceleración
