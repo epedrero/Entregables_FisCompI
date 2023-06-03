@@ -192,7 +192,7 @@ int main()
     }
 
     t = 0.0;
-    // Agregar datos posicion analitica al .dat
+    // Agregar datos posicion real de la función analítica al .dat
     while (t < tf)
     {
         double sol_analitica = solucion_analitica(t);
