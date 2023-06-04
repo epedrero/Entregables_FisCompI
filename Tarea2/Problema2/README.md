@@ -6,13 +6,13 @@ $$\ddot{x}(t)+\frac{c}{m}\dot{x}(t)+\frac{k}{m}x(t)=0$$
 
 en donde
 * $m=2$ kg
-* $c=460 $ Ns/m
+* $c=460$ Ns/m
 * $k=450$ N/m
 
 y las condiciones iniciales
 
-* $y(0)=0.01$m
-* $\dot{x}(t)=0$m/s
+* $x(0)=0.01$ m
+* $\dot{x}(t)=0$ m/s
 
 Se utilizaron los métodos de Euler para dos valores distinto de $h$, el método de Runge-Kutta de cuardo orden también para los mismos valores de $h$ y el método de Runge-Kutta-Fehlberg (RK45) con un $h$ inicial.\\
 
