@@ -5,10 +5,9 @@ Para resolver la ecuación diferencial que describe el movimiento de una masa ad
 $$\ddot{x}(t)+\frac{c}{m}\dot{x}(t)+\frac{k}{m}x(t)=0$$
 
 en donde
-
-* $m=2$kg
-* $c=460$Ns/m
-* $k=450$N/m
+* $m=2$ kg
+* $c=460 $ Ns/m
+* $k=450$ N/m
 
 y las condiciones iniciales
 
