@@ -1,0 +1,9 @@
+## Pregunta 3
+
+* Este prooblema corresponde a un problema mixto, entre `problema de valores iniciales (PVI)` y `problemas de valores de frontera`, puesto que las condiciones que se presentan están en función del tiempo en $t=0$ y hay uno, $\dot{\theta_2(t=3s)=\pi}$ el cual corresponde a un valor de frontera.
+
+* Sí, es posible resolverlo con el `método de Shooting no lineal` y `método diferencias finitas`. Usaría el de `Shooting no lineal` pues así se convierte en un problema de PVI con valores de condiciones iniciales desconocidas y luego resolver este sistema con algún método para PVI, de preferencia el `método de Runge-Kutta-Fehlberg` debido a su precisión. En este método se utilizan las condiciones iniciales de $\theta_1$, $\dot{theta}_1$ y $\dot{theta}_2$ para así ajustar estas condiciones iniciales hasta satisfacer la condición de frontera presentada para $\theta_2$.
+
+* Es posible aplicar diferencias finitas pero no se podría utilizar ningún método de resolución de sistemas lineales debido a que el resultado de esta aplicación daría un sistema de ecuaciones no lineales debido a la presencia de funciones trigonométricas, por lo que no sería posible aplicar luego de esta discretización una resolución por `Gauss-Jordan`
+
+* Sí, es posible, puesto que el `método de Newton-Raphson` requiere que las ecuaciones sean diferenciables para ser aplicado. Esto se usaría primero aplicando el de Shooting no lineal, para ajustar los valores inciales hasta satisfacer las condiciones de frontera, luego con el método de Newton-Raphson se utilizaría para encontrar las raíces de la función para así encontrar una solución que cumpla con las condiciones.
