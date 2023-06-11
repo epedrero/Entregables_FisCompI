@@ -90,6 +90,7 @@ int main() {
     Y[0] = T0;
     Y[1] = y1_1;
     x = 0;
+    fprintf(temperatura, "%.6f\t%.6f\n", x, Y[0]);
     for (int i = 1; i <= nf; i++) {
         double xi = x + h;
         int status = gsl_odeiv2_driver_apply(d, &x, xi, Y);
